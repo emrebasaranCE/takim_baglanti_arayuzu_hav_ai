@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: teknofest_app_container
+    ports:
+      - "8000:8000"
+    volumes:
+      - shared:/shared
+      - .:/app  # Optional: mount current directory for development
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    networks:
+      - app-network
+
+volumes:
+  shared:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge
