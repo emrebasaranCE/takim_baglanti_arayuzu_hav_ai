@@ -3,3 +3,4 @@ shared
 .venv
 _logs
 _images
+ground_truth.json
