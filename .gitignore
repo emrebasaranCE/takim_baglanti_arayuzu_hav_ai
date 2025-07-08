@@ -1,0 +1,5 @@
+config
+shared
+.venv
+_logs
+_images
